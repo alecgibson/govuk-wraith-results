@@ -7,10 +7,10 @@ module.exports = function (casper, ready) {
     casper.open(casper.page.url, {
         method: 'get',
         headers: {
-            'SOME-HEADER': 'fish'
+          'GOVUK-ABTest-EducationNavigation': 'B',
+          'Cookie': 'govuk_takenUserSatisfactionSurvey=true; seen_cookie_message=yes; ABTest-EducationNavigation=B; govuk_not_first_visit=yes;'
         }
-    });
-    casper.then(function () {
-        setTimeout(ready, 1000);
+    }).then(function() {
+      casper.wait(10000, ready);
     });
 }
