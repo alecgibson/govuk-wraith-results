@@ -17,12 +17,24 @@
 # (required) The engine to run Wraith with. Examples: 'phantomjs', 'casperjs', 'slimerjs'
 browser: "casperjs"
 
+# AKG: Rendering apps:
+# specialist-frontend
+# whitehall-frontend
+# government-frontend
+# frontend
+# calendars
+# finder-frontend
+# manuals-frontend
+# collections
+# service-manual-frontend
+# smartanswers
 # (required) The domain to take screenshots of.
 domains:
-  english: "https://betademo:nottobeshared@www-origin.integration.publishing.service.gov.uk"
+  english: "http://www.dev.gov.uk"
 
 # (required) The paths to capture. This particular config is using casperjs, so we can take screenshots of selectors rather than the entire page.
 paths:
+  root: /
   aaib_report_0: /aaib-reports/aircraft-accident-report-aar-1-2017-g-bxfi-22-august-2015
   aaib_report_1: /aaib-reports/aaib-investigation-to-hav-airlander-10-g-phrg
   aaib_report_2: /aaib-reports/aaib-investigation-to-atr-72-212-a-g-cobo
