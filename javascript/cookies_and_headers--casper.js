@@ -8,9 +8,9 @@ module.exports = function (casper, ready) {
         method: 'get',
         headers: {
           'GOVUK-ABTest-EducationNavigation': 'B',
-          'Cookie': 'govuk_takenUserSatisfactionSurvey=true; seen_cookie_message=yes; ABTest-EducationNavigation=B; govuk_not_first_visit=yes;'
+          'Cookie': 'ABTest-EducationNavigation=B'
         }
-    }).then(function() {
-      casper.wait(10000, ready);
+    }).then(function(response) {
+      casper.wait(2000, ready);
     });
 }
