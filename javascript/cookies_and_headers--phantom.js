@@ -20,6 +20,18 @@ module.exports = function (phantom, ready) {
         'domain': 'integration.publishing.service.gov.uk'
     });
 
+    phantom.addCookie({
+        'name': 'seen_cookie_message',
+        'value': 'yes',
+        'domain': 'gov.uk'
+    });
+
+    phantom.addCookie({
+        'name': 'govuk_not_first_visit',
+        'value': 'yes',
+        'domain': 'gov.uk'
+    });
+
     phantom.open(phantom.url + '?' + new Date(), function () {
 
       setTimeout(ready, 2000);
