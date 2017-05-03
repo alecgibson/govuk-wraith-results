@@ -4,7 +4,7 @@
 // ######################################################
 module.exports = function (casper, ready) {
     // reload page with headers set
-    casper.open(casper.page.url, {
+    casper.open(casper.page.url + '?' + new Date(), {
         method: 'get',
         headers: {
           'GOVUK-ABTest-EducationNavigation': 'B',
