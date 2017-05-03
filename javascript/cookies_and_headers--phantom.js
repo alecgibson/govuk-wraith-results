@@ -22,21 +22,6 @@ module.exports = function (phantom, ready) {
 
     phantom.open(phantom.url + '?' + new Date(), function () {
 
-      setTimeout(function() {
-        var targetScrollTop = page.evaluate(function() {
-          var toggle = document.querySelector('.js-report-a-problem-toggle');
-          var target = toggle.offsetTop - 500;
-          return target;
-        });
-
-        page.scrollPosition = {
-          top: targetScrollTop,
-          left: 0
-        };
-
-        setTimeout(ready, 500);
-      }, 2000);
+      setTimeout(ready, 2000);
     });
-
-    ready();
 }
