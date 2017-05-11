@@ -33,7 +33,19 @@ module.exports = function (phantom, ready) {
     });
 
     phantom.open(phantom.url + '?' + new Date(), function () {
+      setTimeout(function() {
+        removeById('global-cookie-message');
+        removeById('user-satisfaction-survey-container')
+      });
 
       setTimeout(ready, 2000);
     });
+
+    function removeById(id) {
+      var element = document.getElementById(id);
+      if (!element) {
+        return;
+      }
+      element.remove();
+    }
 }
